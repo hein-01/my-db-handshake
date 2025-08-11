@@ -119,7 +119,7 @@ const Index = () => {
               <div className="w-32 h-32 bg-black rounded-lg flex items-center justify-center">
                 <div className="text-white text-xs grid grid-cols-8 gap-1 p-2">
                   {/* QR Code pattern */}
-                  {Array.from({ length: 64 }).map((_, i) => (
+                  {Array.from({ length: 64 }, (_, i) => (
                     <div 
                       key={i} 
                       className={`w-2 h-2 ${(i * 7 + i % 8) % 3 === 0 ? 'bg-white' : 'bg-transparent'}`}
@@ -269,7 +269,7 @@ const Index = () => {
       </section>
 
       {/* Popular Businesses Section */}
-      {/* <PopularBusinesses /> */}
+      <PopularBusinesses />
     </div>
   );
 };
