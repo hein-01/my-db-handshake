@@ -90,57 +90,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Start your online business Section */}
-      <section className="w-full bg-background py-8">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl shadow-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
-            {/* Illustration */}
-            <div className="flex-shrink-0">
-              <div className="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 to-purple-400/20"></div>
-                <div className="relative z-10 text-white text-center">
-                  <div className="text-3xl mb-2">🚀</div>
-                  <div className="text-xs font-semibold">START</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Content */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-                Start your online business today!
-              </h2>
-              
-              <div className="space-y-3 text-gray-600 mb-6">
-                <div className="flex items-center justify-center md:justify-start gap-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span>Set up your digital storefront in minutes</span>
-                </div>
-                
-                <div className="flex items-center justify-center md:justify-start gap-3">
-                  <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                    </svg>
-                  </div>
-                  <span>Reach customers both online and offline with our platform</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* CTA Button */}
-            <div className="flex-shrink-0">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Get Started →
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Popular Categories Section */}
       <section className="py-12 bg-background">
