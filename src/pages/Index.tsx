@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ShoppingBag, Compass } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
+// import { Navbar } from "@/components/Navbar";
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,7 +10,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       
       {/* Hero Banner Section */}
       <section className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-blue-600 py-20 px-4">
