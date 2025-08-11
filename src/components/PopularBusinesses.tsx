@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, Bookmark, CheckCircle, Check, X, BadgeCheck, MapPin } from 'lucide-react';
+import { Star, Bookmark, Check, X, BadgeCheck, MapPin } from 'lucide-react';
 
 interface Business {
   id: number;
@@ -19,7 +19,6 @@ interface Business {
 }
 
 const PopularBusinesses = () => {
-  // Sample business data with placeholder images from the provided list
   const businesses: Business[] = [
     {
       id: 1,
@@ -62,145 +61,8 @@ const PopularBusinesses = () => {
       pickupInStore: false,
       bankDigitalPayments: false,
       nextDayDelivery: false
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop",
-      name: "Business Hub",
-      location: "Causeway Bay",
-      rating: 4,
-      isVerified: true,
-      onlineShopUrl: "#shop4",
-      facebookUrl: "#facebook4",
-      cashOnDelivery: true,
-      pickupInStore: true,
-      bankDigitalPayments: true,
-      nextDayDelivery: false
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop",
-      name: "Creative Agency",
-      location: "Sheung Wan",
-      rating: 5,
-      isVerified: true,
-      onlineShopUrl: "#shop5",
-      facebookUrl: "#facebook5",
-      cashOnDelivery: false,
-      pickupInStore: false,
-      bankDigitalPayments: true,
-      nextDayDelivery: true
-    },
-    {
-      id: 6,
-      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&h=200&fit=crop",
-      name: "Modern Office",
-      location: "Admiralty",
-      rating: 4,
-      isVerified: false,
-      onlineShopUrl: "#shop6",
-      facebookUrl: "#facebook6",
-      cashOnDelivery: true,
-      pickupInStore: true,
-      bankDigitalPayments: false,
-      nextDayDelivery: false
-    },
-    {
-      id: 7,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop",
-      name: "Professional Services",
-      location: "Mong Kok",
-      rating: 5,
-      isVerified: true,
-      onlineShopUrl: "#shop7",
-      facebookUrl: "#facebook7",
-      cashOnDelivery: false,
-      pickupInStore: true,
-      bankDigitalPayments: true,
-      nextDayDelivery: false
-    },
-    {
-      id: 8,
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=200&fit=crop",
-      name: "Collaboration Center",
-      location: "Jordan",
-      rating: 4,
-      isVerified: true,
-      onlineShopUrl: "#shop8",
-      facebookUrl: "#facebook8",
-      cashOnDelivery: true,
-      pickupInStore: false,
-      bankDigitalPayments: true,
-      nextDayDelivery: true
-    },
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=200&fit=crop",
-      name: "Web Development Co",
-      location: "Yau Ma Tei",
-      rating: 5,
-      isVerified: false,
-      onlineShopUrl: "#shop9",
-      facebookUrl: "#facebook9",
-      cashOnDelivery: false,
-      pickupInStore: false,
-      bankDigitalPayments: false,
-      nextDayDelivery: false
-    },
-    {
-      id: 10,
-      image: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=400&h=200&fit=crop",
-      name: "Corporate Tower",
-      location: "Central",
-      rating: 4,
-      isVerified: true,
-      onlineShopUrl: "#shop10",
-      facebookUrl: "#facebook10",
-      cashOnDelivery: true,
-      pickupInStore: true,
-      bankDigitalPayments: true,
-      nextDayDelivery: true
-    },
-    {
-      id: 11,
-      image: "https://images.unsplash.com/photo-1459767129954-1b1c1f9b9ace?w=400&h=200&fit=crop",
-      name: "Business Plaza",
-      location: "Fortress Hill",
-      rating: 5,
-      isVerified: true,
-      onlineShopUrl: "#shop11",
-      facebookUrl: "#facebook11",
-      cashOnDelivery: false,
-      pickupInStore: true,
-      bankDigitalPayments: true,
-      nextDayDelivery: false
-    },
-    {
-      id: 12,
-      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511?w=400&h=200&fit=crop",
-      name: "Innovation Hub",
-      location: "Quarry Bay",
-      rating: 4,
-      isVerified: false,
-      onlineShopUrl: "#shop12",
-      facebookUrl: "#facebook12",
-      cashOnDelivery: true,
-      pickupInStore: false,
-      bankDigitalPayments: false,
-      nextDayDelivery: true
     }
   ];
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <Star
-        key={index}
-        className={`w-3 h-3 ${
-          index < rating ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-300 text-gray-300'
-        }`}
-      />
-    ));
-  };
 
   return (
     <section className="py-12 bg-background">
@@ -229,7 +91,14 @@ const PopularBusinesses = () => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
-                      {renderStars(business.rating)}
+                      {Array.from({ length: 5 }, (_, index) => (
+                        <Star
+                          key={index}
+                          className={`w-3 h-3 ${
+                            index < business.rating ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-300 text-gray-300'
+                          }`}
+                        />
+                      ))}
                     </div>
                     <span className="text-sm font-medium text-foreground">From $5</span>
                   </div>
@@ -257,7 +126,6 @@ const PopularBusinesses = () => {
                     {business.location}
                   </p>
                   
-                  {/* Payment and Delivery Options */}
                   <div className="flex flex-wrap gap-x-4 gap-y-1">
                     <div className="flex items-center gap-1">
                       <div className={`w-3 h-3 rounded-full flex items-center justify-center ${business.cashOnDelivery ? 'bg-green-500' : 'bg-gray-400'}`}>
