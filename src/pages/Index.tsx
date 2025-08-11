@@ -269,7 +269,7 @@ const Index = () => {
       </section>
 
       {/* Popular Businesses Section */}
-      <PopularBusinesses />
+      {/* <PopularBusinesses /> */}
     </div>
   );
 };
