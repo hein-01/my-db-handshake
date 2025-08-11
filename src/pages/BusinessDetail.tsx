@@ -137,19 +137,6 @@ export default function BusinessDetail() {
     }
   };
 
-  const renderStars = (rating: number, interactive = false, onRatingChange?: (rating: number) => void) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`h-5 w-5 ${
-          i < rating
-            ? "fill-yellow-400 text-yellow-400"
-            : "text-muted-foreground"
-        } ${interactive ? "cursor-pointer hover:scale-110" : ""}`}
-        onClick={interactive && onRatingChange ? () => onRatingChange(i + 1) : undefined}
-      />
-    ));
-  };
 
   if (loading) {
     return (
@@ -226,7 +213,16 @@ export default function BusinessDetail() {
                   </div>
                   <div className="text-right">
                     <div className="flex items-center gap-1">
-                      {renderStars(business.rating)}
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-5 w-5 ${
+                            i < business.rating
+                              ? "fill-yellow-400 text-yellow-400"
+                              : "text-muted-foreground"
+                          }`}
+                        />
+                      ))}
                     </div>
                     <p className="text-sm text-muted-foreground mt-1">
                       {business.rating.toFixed(1)} ({business.total_reviews} reviews)
@@ -275,9 +271,18 @@ export default function BusinessDetail() {
               <CardContent className="space-y-4">
                 {reviews.map((review) => (
                   <div key={review.id} className="border-b pb-4 last:border-b-0">
-                    <div className="flex items-center gap-2 mb-2">
-                      {renderStars(review.rating)}
-                      <span className="text-sm text-muted-foreground">
+                     <div className="flex items-center gap-2 mb-2">
+                       {Array.from({ length: 5 }, (_, i) => (
+                         <Star
+                           key={i}
+                           className={`h-5 w-5 ${
+                             i < review.rating
+                               ? "fill-yellow-400 text-yellow-400"
+                               : "text-muted-foreground"
+                           }`}
+                         />
+                       ))}
+                       <span className="text-sm text-muted-foreground">
                         {new Date(review.created_at).toLocaleDateString()}
                       </span>
                     </div>
@@ -307,11 +312,19 @@ export default function BusinessDetail() {
                   <>
                     <div>
                       <label className="block text-sm font-medium mb-2">Rating</label>
-                      <div className="flex gap-1">
-                        {renderStars(newReview.rating, true, (rating) => 
-                          setNewReview(prev => ({ ...prev, rating }))
-                        )}
-                      </div>
+                       <div className="flex gap-1">
+                         {Array.from({ length: 5 }, (_, i) => (
+                           <Star
+                             key={i}
+                             className={`h-5 w-5 ${
+                               i < newReview.rating
+                                 ? "fill-yellow-400 text-yellow-400"
+                                 : "text-muted-foreground"
+                             } cursor-pointer hover:scale-110`}
+                             onClick={() => setNewReview(prev => ({ ...prev, rating: i + 1 }))}
+                           />
+                         ))}
+                       </div>
                     </div>
                     
                     <div>
