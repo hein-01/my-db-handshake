@@ -192,7 +192,7 @@ const PopularBusinesses = () => {
   ];
 
   const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }).map((_, index) => (
+    return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
         className={`w-3 h-3 ${
