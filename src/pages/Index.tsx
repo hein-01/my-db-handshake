@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, ShoppingBag, Compass } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import PopularBusinesses from "@/components/PopularBusinesses";
+// import PopularBusinesses from "@/components/PopularBusinesses";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -184,7 +184,7 @@ const Index = () => {
       </section>
 
       {/* Popular Businesses Section */}
-      <PopularBusinesses />
+      {/* <PopularBusinesses /> */}
     </div>
   );
 };
