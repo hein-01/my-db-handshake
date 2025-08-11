@@ -28,18 +28,6 @@ interface BusinessCardProps {
 }
 
 export const BusinessCard = ({ business }: BusinessCardProps) => {
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`h-4 w-4 ${
-          i < Math.floor(rating)
-            ? "fill-yellow-400 text-yellow-400"
-            : "text-muted-foreground"
-        }`}
-      />
-    ));
-  };
 
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">
@@ -76,7 +64,16 @@ export const BusinessCard = ({ business }: BusinessCardProps) => {
         )}
         
         <div className="flex items-center gap-1">
-          {renderStars(business.rating)}
+          {Array.from({ length: 5 }, (_, i) => (
+            <Star
+              key={i}
+              className={`h-4 w-4 ${
+                i < Math.floor(business.rating)
+                  ? "fill-yellow-400 text-yellow-400"
+                  : "text-muted-foreground"
+              }`}
+            />
+          ))}
           <span className="text-sm text-muted-foreground ml-2">
             {business.rating.toFixed(1)} ({business.total_reviews} reviews)
           </span>
