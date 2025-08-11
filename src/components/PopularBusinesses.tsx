@@ -241,7 +241,9 @@ const PopularBusinesses = () => {
                         alt="Business logo" 
                         className="w-10 h-10 rounded-md object-cover"
                       />
-                      <BadgeCheck className="w-4 h-4 text-white absolute -top-1 -right-1 rounded-full bg-primary" />
+                      {business.isVerified && (
+                        <BadgeCheck className="w-4 h-4 text-white absolute -top-1 -right-1 rounded-full bg-primary" />
+                      )}
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-sm text-foreground leading-tight line-clamp-2">
