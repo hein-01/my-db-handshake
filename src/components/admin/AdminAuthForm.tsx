@@ -37,6 +37,12 @@ export default function AdminAuthForm({ mode }: AdminAuthFormProps) {
         localStorage.removeItem(key);
       }
     });
+    // Also clear sessionStorage
+    Object.keys(sessionStorage || {}).forEach((key) => {
+      if (key.startsWith('supabase.auth.') || key.includes('sb-')) {
+        sessionStorage.removeItem(key);
+      }
+    });
   };
 
   const signInWithGoogle = async () => {
