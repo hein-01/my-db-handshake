@@ -256,7 +256,7 @@ const PopularBusinesses = () => {
                   </p>
                   
                   {/* Payment and Delivery Options */}
-                  <div className="flex flex-wrap gap-x-4 gap-y-1">
+                  <div className="flex flex-wrap gap-x-1 gap-y-1">
                     <div>
                       <span className="text-xs px-2 py-0.5 rounded border border-green-600 text-green-600">Cash on Delivery</span>
                     </div>
