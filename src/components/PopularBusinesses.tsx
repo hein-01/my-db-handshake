@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, Bookmark, CheckCircle, Check, X, BadgeCheck, MapPin } from 'lucide-react';
+import { Star, Bookmark, CheckCircle, Check, X, BadgeCheck, MapPin, ArrowRight } from 'lucide-react';
 
 interface Business {
   id: number;
@@ -209,7 +209,7 @@ const PopularBusinesses = () => {
         
         <div className="flex flex-wrap justify-center">
           {businesses.map((business) => (
-            <Card key={business.id} className="w-[320px] h-[455px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-[5px] md:mx-[10px] mb-4">
+            <Card key={business.id} className="group w-[320px] h-[455px] flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 mx-[5px] md:mx-[10px] mb-4">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={business.image}
@@ -285,10 +285,11 @@ const PopularBusinesses = () => {
                   </Button>
                   
                   <Button 
-                    className="w-full h-8 text-xs"
+                    className="w-full h-8 text-xs flex items-center justify-center gap-2"
                     onClick={() => window.open(business.onlineShopUrl, '_blank')}
                   >
                     Go To Online Shop
+                    <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </div>
               </CardContent>
