@@ -264,7 +264,7 @@ const PopularBusinesses = () => {
                           <X className="w-2 h-2 text-white" />
                         }
                       </div>
-                      <span className="text-xs text-muted-foreground">Cash on Delivery</span>
+                      <span className="text-xs px-2 py-0.5 rounded border border-green-600 text-green-600">Cash on Delivery</span>
                     </div>
                     
                     <div className="flex items-center gap-1">
@@ -274,7 +274,7 @@ const PopularBusinesses = () => {
                           <X className="w-2 h-2 text-white" />
                         }
                       </div>
-                      <span className="text-xs text-muted-foreground">Pickup In-Store</span>
+                      <span className="text-xs px-2 py-0.5 rounded border border-blue-600 text-blue-600">Pickup In-Store</span>
                     </div>
                     
                     <div className="flex items-center gap-1">
@@ -284,7 +284,7 @@ const PopularBusinesses = () => {
                           <X className="w-2 h-2 text-white" />
                         }
                       </div>
-                      <span className="text-xs text-muted-foreground">Digital Payments</span>
+                      <span className="text-xs px-2 py-0.5 rounded border border-purple-600 text-purple-600">Digital Payments</span>
                     </div>
                     
                     <div className="flex items-center gap-1">
@@ -294,7 +294,7 @@ const PopularBusinesses = () => {
                           <X className="w-2 h-2 text-white" />
                         }
                       </div>
-                      <span className="text-xs text-muted-foreground">Next-Day Delivery</span>
+                      <span className="text-xs px-2 py-0.5 rounded border border-orange-600 text-orange-600">Next-Day Delivery</span>
                     </div>
                   </div>
                 </div>
