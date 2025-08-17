@@ -231,7 +231,7 @@ const Index = () => {
               <a 
                 key={product.id} 
                 href={product.link}
-                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer block transition-all duration-300 hover:ring-4 hover:ring-primary"
+                className="group relative rounded-lg overflow-hidden shadow-lg cursor-pointer block transition-all duration-300 hover:ring-4 hover:ring-primary"
               >
                 <img
                   src={product.image}
@@ -244,7 +244,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center text-xs">
                     <span className="underline">See Shops</span>
-                    <span className="ml-1">→</span>
+                    <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </div>
                 </div>
               </a>
