@@ -59,15 +59,11 @@ export function useAdminAuth() {
         .from('admin_users')
         .select('*')
         .eq('user_id', userId)
-        .single();
+        .maybeSingle();
 
       if (error) {
-        if (error.code === 'PGRST116') {
-          // No admin profile found - not an admin
-          setAdminProfile(null);
-        } else {
-          throw error;
-        }
+        console.error('Error fetching admin profile:', error);
+        setAdminProfile(null);
       } else {
         setAdminProfile(data);
       }
