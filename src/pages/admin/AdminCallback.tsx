@@ -16,11 +16,22 @@ export default function AdminCallback() {
         
         if (data.session?.user) {
           // Check if user is an admin
-          const { data: adminProfile } = await supabase
+          const { data: adminProfile, error: adminError } = await supabase
             .from('admin_users')
             .select('*')
             .eq('user_id', data.session.user.id)
-            .single();
+            .maybeSingle();
+
+          if (adminError) {
+            console.error('Error checking admin profile:', adminError);
+            toast({
+              title: "Error",
+              description: "Database error during authentication.",
+              variant: "destructive",
+            });
+            navigate('/admin/login');
+            return;
+          }
 
           if (adminProfile) {
             toast({

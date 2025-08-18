@@ -153,11 +153,16 @@ export default function AdminAuthForm({ mode }: AdminAuthFormProps) {
         }
 
         // Check if user is an admin
-        const { data: adminProfile } = await supabase
+        const { data: adminProfile, error: adminError } = await supabase
           .from('admin_users')
           .select('*')
           .eq('user_id', data.user.id)
-          .single();
+          .maybeSingle();
+
+        if (adminError) {
+          console.error('Error checking admin profile:', adminError);
+          throw new Error("Database error during authentication.");
+        }
 
         if (!adminProfile) {
           await supabase.auth.signOut();

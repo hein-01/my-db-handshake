@@ -22,13 +22,18 @@ export default function ProtectedRoute({ children, requireBusinessOwner = false 
 
         if (user) {
           // Fetch user profile to get role
-          const { data: profile } = await supabase
+          const { data: profile, error: profileError } = await supabase
             .from('profiles')
             .select('role')
             .eq('user_id', user.id)
-            .single();
+            .maybeSingle();
           
-          setUserRole(profile?.role || null);
+          if (profileError) {
+            console.error('Profile fetch error:', profileError);
+            setUserRole(null);
+          } else {
+            setUserRole(profile?.role || null);
+          }
         }
       } catch (error) {
         console.error('Auth check error:', error);
