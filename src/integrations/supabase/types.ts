@@ -326,6 +326,10 @@ export type Database = {
         Args: Record<PropertyKey, never>
         Returns: number
       }
+      get_current_admin_role: {
+        Args: Record<PropertyKey, never>
+        Returns: Database["public"]["Enums"]["admin_role"]
+      }
       log_admin_login_attempt: {
         Args: {
           email_input: string
