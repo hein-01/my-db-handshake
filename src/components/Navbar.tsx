@@ -46,6 +46,9 @@ export const Navbar = () => {
             {user ? (
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-muted-foreground">{user.email}</span>
+                <Button asChild variant="default" size="sm">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
                 <Button variant="outline" size="sm" onClick={signOut}>
                   Sign Out
                 </Button>
