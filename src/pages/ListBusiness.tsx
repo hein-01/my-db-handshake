@@ -187,7 +187,7 @@ export default function ListBusiness() {
         description: "Your business has been listed successfully.",
       });
 
-      navigate('/business-directory');
+      navigate('/dashboard');
     } catch (error: any) {
       console.error('Error listing business:', error);
       toast({
